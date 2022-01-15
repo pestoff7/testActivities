@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">testActivities</string>
+    <string name="firstQuestText">Сколько будет 2+2?</string>
+    <string name="rightAnswerFirstQuest">4</string>
+    <string name="wrongAnswerFirstQuest">3</string>
+    <string name="wrongAnswer2FirstQuest">5</string>
+    <string name="forward">Далее</string>
+    <string name="back">Назад</string>
+    <string name="secondQuestText">Сколько будет 5 x 5?</string>
+    <string name="wrongAnswerSecondQuest">24</string>
+    <string name="wrongAnswer2SecondQuest">81</string>
+    <string name="rightAnswerSecondQuest">25</string>
+    <string name="thirdQuestText">Сколько будет 64 / 8?</string>
+    <string name="wrongAnswerThirdQuest">64</string>
+    <string name="wrongAnswer2ThirdQuest">32</string>
+    <string name="rightAnswerThirdQuest">8</string>
+    <string name="numberOfRightQuest">Количество правильных ответов:</string>
+</resources>
