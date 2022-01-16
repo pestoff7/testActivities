@@ -21,10 +21,10 @@ public class third_question extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_question);
+        result = new Intent(third_question.this, result.class);
     }
 
     public void onClickResult(View v) {
-        result = new Intent(third_question.this, result.class);
         thirdRadioBut1 = findViewById(R.id.thirdRadioBut1);
         thirdRadioBut2 = findViewById(R.id.thirdRadioBut2);
         thirdRadioBut3 = findViewById(R.id.thirdRadioBut3);
@@ -45,7 +45,6 @@ public class third_question extends AppCompatActivity {
 
     public void forwardClickResult(View v) {
         forwardButResult = findViewById(R.id.thirdForwardButton);
-        result = new Intent(third_question.this, result.class);
         if (v.getId() == forwardButResult.getId()){
             startActivity(result);
         }

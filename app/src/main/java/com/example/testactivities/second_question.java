@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
 public class second_question extends AppCompatActivity {
 
@@ -22,11 +21,10 @@ public class second_question extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_question);
+        thirdQuest = new Intent(second_question.this, third_question.class);
     }
 
     public void onClickThird(View v) {
-
-        thirdQuest = new Intent(second_question.this, third_question.class);
         secondRadioBut1 = findViewById(R.id.secondRadioBut1);
         secondRadioBut2 = findViewById(R.id.secondRadioBut2);
         secondRadioBut3 = findViewById(R.id.secondRadioBut3);
@@ -47,7 +45,6 @@ public class second_question extends AppCompatActivity {
 
     public void forwardClickThird(View v) {
         forwardButThird = findViewById(R.id.secondForwardButton);
-        thirdQuest = new Intent(second_question.this, third_question.class);
         if (v.getId() == forwardButThird.getId()){
             startActivity(thirdQuest);
         }

@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        secondQuest = new Intent(MainActivity.this, second_question.class);
     }
 
     public void onClick(View v) {
-        secondQuest = new Intent(MainActivity.this, second_question.class);
         radioBut1 = findViewById(R.id.radioBut1);
         radioBut2 = findViewById(R.id.radioBut2);
         radioBut3 = findViewById(R.id.radioBut3);
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void forwardClick(View v) {
         forwardBut = findViewById(R.id.forwardButton);
-        secondQuest = new Intent(MainActivity.this, second_question.class);
         if (v.getId() == forwardBut.getId()){
             startActivity(secondQuest);
         }
