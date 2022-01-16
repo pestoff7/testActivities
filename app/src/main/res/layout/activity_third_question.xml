@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wrongAnswerThirdQuest"
-            android:textSize="22sp">
+            android:textSize="22sp"
+            android:onClick="onClickResult">
         </RadioButton>
         <RadioButton
             android:id="@+id/thirdRadioBut2"
@@ -39,7 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rightAnswerThirdQuest"
-            android:textSize="22sp">
+            android:textSize="22sp"
+            android:onClick="onClickResult">
         </RadioButton>
     </RadioGroup>
     <LinearLayout
@@ -57,7 +59,8 @@
             android:id="@+id/thirdBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/back">
+            android:text="@string/back"
+            android:onClick="thirdBackButton">
         </Button>
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.example.testactivities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -35,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
             secondQuest.putExtra("number", numberOfRightAnswers);
         }
         else if (v.getId() == radioBut2.getId()){
+            numberOfRightAnswers = 0;
             secondQuest.putExtra("number", numberOfRightAnswers);
         }
         else if (v.getId() == radioBut3.getId()){
+            numberOfRightAnswers = 0;
             secondQuest.putExtra("number", numberOfRightAnswers);
         }
     }
@@ -45,7 +48,17 @@ public class MainActivity extends AppCompatActivity {
     public void forwardClick(View v) {
         forwardBut = findViewById(R.id.forwardButton);
         if (v.getId() == forwardBut.getId()){
-            startActivity(secondQuest);
+            startActivityForResult(secondQuest, 1);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (data == null){
+            return;
+        }
+        this.getIntent().getIntExtra("number", 0);
     }
 }

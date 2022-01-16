@@ -32,14 +32,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wrongAnswerFirstQuest"
-            android:textSize="22sp">
+            android:textSize="22sp"
+            android:onClick="onClick">
         </RadioButton>
         <RadioButton
             android:id="@+id/radioBut3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wrongAnswer2FirstQuest"
-            android:textSize="22sp">
+            android:textSize="22sp"
+            android:onClick="onClick">
         </RadioButton>
     </RadioGroup>
     <LinearLayout

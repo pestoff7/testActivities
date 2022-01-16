@@ -1,5 +1,6 @@
 package com.example.testactivities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +15,7 @@ public class second_question extends AppCompatActivity {
     RadioButton secondRadioBut1;
     RadioButton secondRadioBut2;
     RadioButton secondRadioBut3;
-    Button forwardButThird;
+    Button forwardButThird, secondButBack;
     int numberOfRightAnswers;
 
     @Override
@@ -32,13 +33,22 @@ public class second_question extends AppCompatActivity {
         numberOfRightAnswers = secondQuest.getIntExtra("number", 0);
 
         if (v.getId() == secondRadioBut1.getId()) {
+            secondRadioBut1.setEnabled(false);
+            secondRadioBut2.setEnabled(false);
+            secondRadioBut3.setEnabled(false);
             thirdQuest.putExtra("number", numberOfRightAnswers);
         }
         else if (v.getId() == secondRadioBut2.getId()){
             numberOfRightAnswers += 1;
+            secondRadioBut1.setEnabled(false);
+            secondRadioBut2.setEnabled(false);
+            secondRadioBut3.setEnabled(false);
             thirdQuest.putExtra("number", numberOfRightAnswers);
         }
         else if (v.getId() == secondRadioBut3.getId()){
+            secondRadioBut1.setEnabled(false);
+            secondRadioBut2.setEnabled(false);
+            secondRadioBut3.setEnabled(false);
             thirdQuest.putExtra("number", numberOfRightAnswers);
         }
     }
@@ -46,8 +56,27 @@ public class second_question extends AppCompatActivity {
     public void forwardClickThird(View v) {
         forwardButThird = findViewById(R.id.secondForwardButton);
         if (v.getId() == forwardButThird.getId()){
-            startActivity(thirdQuest);
+            startActivityForResult(thirdQuest, 1);
         }
     }
 
+    public void secondBackButton(View v) {
+        secondButBack = findViewById(R.id.secondBackButton);
+        if (v.getId() == secondButBack.getId()){
+            Intent backFirstIntent = new Intent();
+            backFirstIntent.putExtra("number", numberOfRightAnswers);
+            setResult(RESULT_OK, backFirstIntent);
+            finish();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (data == null){
+            return;
+        }
+        this.getIntent().getIntExtra("number", 0);
+    }
 }
